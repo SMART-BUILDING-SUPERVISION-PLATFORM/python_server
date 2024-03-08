@@ -1,0 +1,11 @@
+CCC_PanoPlane360 경로에서 실행!!
+
+python PanoPlane360/inference.py --pth PanoPlane360/ckpt/mp3d.pth --glob "image100/*jpg" --outdir image100_Pano
+
+python PanoPlane360/vis_planes.py --img image100/_frame107.jpg --h_planes image100_Pano/_frame107.h_planes.exr --v_planes image100_Pano/_frame107.v_planes.exr --mesh --save_path image100_Pano_3D/_frame107.obj
+
+
+
+python PanoPlane360/inference.py --pth PanoPlane360/ckpt/mp3d.pth --glob "image100_SAM/*jpg" --outdir image100_SAM_Pano
+
+python PanoPlane360/vis_planes.py --img image100/_frame107.jpg --h_planes image100_SAM_Pano/_frame107_mask.h_planes.exr --v_planes image100_SAM_Pano/_frame107_mask.v_planes.exr --mesh --save_path image100_SAM_Pano_3D/_frame107_mask.obj
