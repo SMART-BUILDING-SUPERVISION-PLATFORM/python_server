@@ -1,7 +1,7 @@
 from dto import Res, Req
 from base64 import b64decode
 
-virtualtour_url = "http://localhost:8000/"
+virtualtour_url = "https://my.matterport.com/show/?m=jm5WwEA3HUN&title=0&brand=0&wh=0"
 
 def a(req: Req):
 	project_id = req.projectId
