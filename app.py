@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from dto import Req, Res
 from service.service import a
 from fastapi.middleware.cors import CORSMiddleware
-from execute_PanoPlain360_code import model_run
 import time
 
 app = FastAPI()
@@ -21,9 +20,8 @@ app.add_middleware(
 # API handler
 @app.post("/panorama", response_model=Res)
 async def read_root(req: Req) -> Res:
-	
+	print(12341234)
 	res = a(req)
 	time.sleep(5)
-	model_run()
 
 	return res
