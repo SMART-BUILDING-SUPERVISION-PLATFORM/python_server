@@ -1,9 +1,8 @@
 from fastapi import FastAPI
 from dto import Req, Res
-from service.service import a
+from service.service import responser
 from fastapi.middleware.cors import CORSMiddleware
-from execute_PanoPlain360_code import model_run
-import time
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -18,12 +17,12 @@ app.add_middleware(
 	allow_headers=["*"],
 )
 
+app.mount("/static", StaticFiles(directory="/Users/jay/Desktop/_dev/main/workspace/kimth_lab/current/model_server/obj_src"), name="static")
+
 # API handler
 @app.post("/panorama", response_model=Res)
 async def read_root(req: Req) -> Res:
 	
-	res = a(req)
-	time.sleep(5)
-	model_run()
+	res = responser(req)
 
 	return res

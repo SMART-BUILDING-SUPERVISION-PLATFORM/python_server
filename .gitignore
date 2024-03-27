@@ -1,3 +1,4 @@
-some_image.jpg
+obj_src/*
+panorama_src/*
 .DS_Store
 .idea
