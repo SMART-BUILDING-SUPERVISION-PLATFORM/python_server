@@ -1,4 +1,4 @@
-obj_src/*
+gltf_src/*
 panorama_src/*
 .DS_Store
 .idea
